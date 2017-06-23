@@ -8,27 +8,57 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
+import { AboutComponent } from './about.component';
+import { ContactComponent } from './contact.component';
+import { FaqComponent } from './faq.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot([
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot([
       {
-        path: 'heroes',
-        component: HeroesComponent
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
       },
       {
         path: 'dashboard',
         component: DashboardComponent
       },
       {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
+        path: 'heroes',
+        component: HeroesComponent
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+      {
+        path: 'faq',
+        component: FaqComponent
       }
     ])
   ],
-  declarations: [AppComponent, HeroDetailComponent, HeroesComponent, DashboardComponent],
-  providers: [HeroService],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent,
+    AboutComponent,
+    ContactComponent,
+    FaqComponent
+  ],
+  providers: [
+    HeroService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 
 export class AppModule {
